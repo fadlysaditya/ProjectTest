@@ -89,7 +89,7 @@ export default class Home extends Component {
     const {location, loading} = this.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to Fadly Aditya Project Test</Text>
+        <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>
           To get location, press the button:
         </Text>
@@ -104,6 +104,39 @@ export default class Home extends Component {
         {location ? (
           <Text style={styles.location}>{JSON.stringify(location, 0, 2)}</Text>
         ) : null}
+        <Text style={styles.instructions}>Extra functions:</Text>
+        <View style={styles.button}>
+          <Button
+            title="Open App Settings"
+            onPress={() => {
+              GetLocation.openAppSettings();
+            }}
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            title="Open Gps Settings"
+            onPress={() => {
+              GetLocation.openGpsSettings();
+            }}
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            title="Open Wifi Settings"
+            onPress={() => {
+              GetLocation.openWifiSettings();
+            }}
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            title="Open Mobile Data Settings"
+            onPress={() => {
+              GetLocation.openCelularSettings();
+            }}
+          />
+        </View>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
     );
